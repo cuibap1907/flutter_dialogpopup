@@ -43,6 +43,31 @@ class _PopupMenuButtonPageState extends State<PopupMenuButtonPage> {
         });
   }
 
+  Widget popupMenuButton()
+  {
+    return PopupMenuButton<String>(
+      icon: Icon(Icons.add, size: 30),
+      itemBuilder: (BuildContext context) => <PopupMenuEntry<String>> [
+        PopupMenuItem<String>(
+          value: "one_val",
+          child: Text("One"),
+        ),
+        PopupMenuItem<String>(
+          value: "two_val",
+          child: Text("Two"),
+        ),
+        PopupMenuItem<String>(
+          value: "three_val",
+          child: Text("Three"),
+        ),
+      ],
+      onSelected: (retVal) {
+        if(retVal == "one_val")
+          print("Press: $retVal");
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,27 +81,28 @@ class _PopupMenuButtonPageState extends State<PopupMenuButtonPage> {
           ),
           titleSpacing: 2.0,
           actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.red,
-              ),
-              onPressed: () {
+            // IconButton(
+            //   icon: Icon(
+            //     Icons.search,
+            //     color: Colors.red,
+            //   ),
+            //   onPressed: () {
 
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.settings,
-                color: Colors.brown,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.shop),
-              color: Colors.redAccent,
-              onPressed: () {},
-            ),
+            //   },
+            // ),
+            // IconButton(
+            //   icon: Icon(
+            //     Icons.settings,
+            //     color: Colors.brown,
+            //   ),
+            //   onPressed: () {},
+            // ),
+            // IconButton(
+            //   icon: Icon(Icons.shop),
+            //   color: Colors.redAccent,
+            //   onPressed: () {},
+            // ),
+            popupMenuButton()
           ],
         ),
         body: Builder(
