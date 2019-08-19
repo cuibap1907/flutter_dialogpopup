@@ -47,7 +47,37 @@ class _PopupMenuButtonPageState extends State<PopupMenuButtonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Menu Popup"),
+          title: Text("Home"),
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+
+            },
+          ),
+          titleSpacing: 2.0,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.search,
+                color: Colors.red,
+              ),
+              onPressed: () {
+
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.brown,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.shop),
+              color: Colors.redAccent,
+              onPressed: () {},
+            ),
+          ],
         ),
         body: Builder(
           builder: (context) {
